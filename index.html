@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+    <style>
+        body{font-family: calibri;}
+        fieldset, div{ margin: 20px 0;}
+        div {border: 1px solid #666; padding: 10px 15px;}
+
+        textarea{
+            width: 100%;
+            height: 150px;
+            resize: none;
+        }
+
+    </style>
+
+
+<body>
+
+    <!-- inicio do formulário -->
+    <form action="" id="dados" name="dados" method="post">
+        
+        <!-- campo de texto     -->
+        <fieldset>
+            <legend>Dados do usuário</legend>
+            <label for="usuario">Usuário: </label>
+            <input type="text" id="usuario" name="usuario" 
+            placeholder="Ex: Fulano de Tal" minlength="10"
+            maxlength="20" required>
+        </fieldset>
+        <!-- campo de texto     -->
+
+        <!-- campo de senha -->
+        <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha"
+            placeholder="Ex: 123456" minlength="10" 
+            maxlength="20" required>
+        </div>
+
+        <!-- botão radio = marca e desmarca a opçõ anterior 
+        permitir apenas 1 opção selecionada
+        checked inicia uma das opções já selecionadas.
+     -->
+        <div>
+            <h4>Selecione sua área de atuação</h4>
+            <input type="radio" name="area" id="area1" value="1">
+            <label for="area1">Front-End</label>
+
+            <input type="radio" name="area" id="area2" value="2">
+            <label for="area2">Back-end</label>
+            
+            <input type="radio" name="area" id="area3" value="3">
+            <label for="area3">Full-Stack</label>
+            
+            <input type="radio" name="area" id="area4" value="4">
+            <label for="area4">DevOps</label>
+        </div>
+
+        <!-- botão checkbox  - selecionar quantas opções quiser -->
+        <div>
+            <h4>Selecione suas preferências</h4>
+            <input type="checkbox" name="viajar" id="viajar" value="1">
+            <label for="viajar">Viajar</label>
+            <input type="checkbox" name="ler" id="ler" value="2">
+            <label for="ler">Ler</label>
+            <input type="checkbox" name="games" id="games" value="3">
+            <label for="games">Jogar videogame</label>
+        </div>
+
+        <!-- campo select -->
+        <div>
+            <label for="formacao">Selecione sua formação:</label>
+            <select name="formacao" id="formacao">
+                <option value="0" disabled selected>Escolha uma opção</option>
+                <option value="1">Ensino Médio</option>
+                <option value="2">Ensino Superior</option>
+                <option value="3">Pós Graduação</option>
+                <option value="4">Mestrado</option>
+                <option value="5">Doutorado</option>
+            </select>
+        </div>
+
+        <!-- campo datalist -->
+        <div>
+            <label for="formacao1">Selecione sua formação: (Datalist)</label>
+            <input list="formacao1">            
+            <datalist id="formacao1">
+                <option value="Ensino Médio">
+                <option value="Ensino Superior">
+                <option value="Pós Graduação">
+                <option value="Mestrado">
+                <option value="Doutorado">                
+            </datalist> 
+        </div>
+
+        <!-- campo de seleção de arquivo-->
+        <div>
+            <label for="arquivo">Selecione o arquivo:</label>
+            <input type="file" name="arquivo" id="arquivo">
+        </div>
+
+        <!-- campos de data -->
+        <div>
+            <label for="viagem">Selecione a data da viagem: </label>
+            <input type="date" id="viagem" name="viagem">
+        </div>
+
+        <!-- campo de hora -->
+        <div>
+            <label for="hora">Hora do embarque:</label>
+            <input type="time" id="hora" name="hora">
+        </div>
+
+        <!-- campo de data e hora -->
+        <div>
+            <label for="datHora">Data e hora do embarque</label>
+            <input type="datetime-local" name="dataHora" id="dataHora">
+        </div>
+
+        <!-- campo para mês -->
+        <div>
+            <label for="mes">Selecione um mês para a viagem</label>
+            <input type="month" name="mes" id="mes">
+        </div>
+
+        <!-- campo para semana -->
+        <div>
+            <label for="semana">Semana</label>
+            <input type="week" id="semana" name="semana'">
+        </div>
+
+        <!-- campo para número -->
+        <div>
+            <label for="numero">Número</label>
+            <input type="number" name="numero" id="numero"
+            min="10" max="100" step="10">
+        </div>
+
+        <!-- campo de número - barra -->
+        <div>
+            <label for="rangeValor">Selecione um valor:</label>
+            <input type="range" name="rangeValor" id="rangeValor"
+            min="100" max="300" step="10" value="100">
+            <p id="caixa"></p>
+        </div>
+
+        <!-- campo para telefone -->
+        <div>
+            <label for="telefone">Celular:</label>
+            <input type="tel" id="telefone" name="telefone">
+        </div>
+
+        <!-- campo para email -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+            placeholder="Ex: seuemail@email.com" required>
+        </div>
+
+        <!-- campo para cor -->
+        <div>
+            <label for="cor">Selecione a cor</label>
+                <input type="color" id="cor" name="cor">
+        </div>
+
+        <!-- campo de múltiplas  linhas -->
+        <div>
+            <label for="mensagem">Escreva sua mensagem</label><br>
+            <textarea name="mensagem" id="mensagem"></textarea>
+        </div>
+
+        <!-- botões -->
+
+        <div>
+            <button type="submit">Enviar dados</button>
+            <button type="reset">Limpar dados</button>
+            <button type="button">Chamar Javascript</button>
+        </div>
+
+        <div>
+            <input type="submit" value="Enviar Dados">
+            <input type="reset" value="Limpar Formulário">
+            <input type="button" value="Javascript">
+        </div>
+    </form>
+    <!-- fim do formulário -->
+    <script src="./js/range.js"></script>
+</body>
+</html>
